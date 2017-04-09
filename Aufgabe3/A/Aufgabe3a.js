@@ -30,25 +30,24 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(element);
     }
     var erstereihe = document.getElementsByTagName("div");
-    // Gibt den Feldern in der ersten Reihe bei einem Klick die Klasse "farbe", wodurch sie rot werden
     for (var i = 0; i < 9; i++) {
         erstereihe[i].addEventListener("click", function () {
             this.classList.toggle("farbe");
             ricesumme();
         });
     }
-    var roteDivs = document.getElementsByClassName("farbe");
+    var gDivs = document.getElementsByClassName("farbe");
     var summe = 0;
     var toolTip = document.getElementById("tooltip"); // div im html mit id wo die summe der angeklickten divs nacher angezeigt wird
     function ricesumme() {
-        if (roteDivs.length == 0) {
+        if (gDivs.length == 0) {
             toolTip.style.display = "none"; //dann ist auch das tooltip.div nicht da 
         }
         else {
             toolTip.style.display = "inline-block"; //wenn nicht 0 divs angeklickt sind, dann wird das tooltip.div angezeigt
         }
-        for (var i = 0; i < roteDivs.length; i++) {
-            summe += Number(roteDivs[i].textContent); //der nummerninhat der angeklickten divs summiert sich
+        for (var i = 0; i < gDivs.length; i++) {
+            summe += Number(gDivs[i].textContent); //der nummerninhat der angeklickten divs summiert sich
             var hexa = summe.toString(16); //berechnet die hexadezimalzahl aus der summe der reisk�rner der angeklickten divs
             var dezi = summe.toString(); //berechnet die dezimalzahl aus der summe der reisk�rner der angeklickten divs
             toolTip.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa; //schreibt in das tooltip.div die ben�tigten zahlen
