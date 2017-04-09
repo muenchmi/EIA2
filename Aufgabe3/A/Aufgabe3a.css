@@ -28,7 +28,7 @@ body {
 	background-color: #70CF78;
 	color: white;
 	border:  solid 1px;
-	z-index: 10000;
+	z-index: 1000000;
 	heigth: 100px;
     width: 300px;
     padding: 1px;
