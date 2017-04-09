@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
         document.body.appendChild(element);
     }
   var erstereihe = document.getElementsByTagName("div");
-    for (var i = 0; i < 9; i++) {
+    for (var i = 0; i < 8; i++) {
         erstereihe[i].addEventListener("click", function () {
             this.classList.toggle("farbe"); 
             ricesumme();
