@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Kreuz 10",
         "Kreuz 9",
         "Kreuz 8",
-        "Kreuz 7",
+        "Kreuz 7"
     ];
 });
 //# sourceMappingURL=Aufgabe3b.js.map

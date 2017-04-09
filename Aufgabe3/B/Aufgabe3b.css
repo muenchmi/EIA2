@@ -6,3 +6,37 @@ Datum: 09.04.2017
 	
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 --> */
+
+div {
+	margin-top:1em;
+	margin-left:1em;
+	height: 250px;
+	width:  200px;
+	float:left;
+	
+}
+
+.hand {
+	  border: solid black;
+	  margin-left: 30%;
+	  background-color: dark blue;
+}
+
+.weg {
+	background-color: dark green;
+	border: solid black;
+	margin-left: 5em;
+		
+}
+
+.hkarten{
+		height:400px;
+		width: 1200px;
+		clear:both;
+		margin-top:5em;
+		margin-right:12%;
+		margin-left:10%;
+		background-color:dark red;
+		
+	
+}
