@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
             summe += Number(gDivs[i].textContent); 
             var hexa = summe.toString(16); 
             var dezi = summe.toString(); 
-            pfeil.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa; 
+            pfeil.textContent = "Summe vom Reis:" + "\r\n"  + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa; 
         }
     }
     document.addEventListener("mousemove", function (Event) {
