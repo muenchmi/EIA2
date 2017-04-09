@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function(): void {
         let element: HTMLElement = document.createElement("div");
         element.textContent = rice.toString();
 
+        
+        //Umbruch
+        if (i % 8 == 0) {
+            zeile = zeile + 1;
+        }
         //Schwarzweiﬂ
         if (zeile % 2 == 0) {
             if (i % 2 != 0) {
@@ -14,11 +19,6 @@ document.addEventListener("DOMContentLoaded", function(): void {
             else {
                 element.className = "board black";
             }
-        }
-
-        //Umbruch
-        if (i % 8 == 0) {
-            zeile = zeile + 1;
         }
         rice = rice * 2;
         document.body.appendChild(element);
