@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.className = "board black";
             }
         }
+        else {
+            if (i % 2 != 0) {
+                element.className = "board black";
+            }
+            else {
+                element.className = "board white";
+            }
+        }
         rice = rice * 2;
         document.body.appendChild(element);
     }
