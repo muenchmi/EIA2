@@ -1,0 +1,24 @@
+body {
+    width: 656px;
+}
+.board {
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.white {
+    background: white;
+    color: black;
+}
+
+.black {
+    background: black;   
+    color: white;
+}
+
+.board:nth-Child(8n+1) {
+	clear: both;
+}
