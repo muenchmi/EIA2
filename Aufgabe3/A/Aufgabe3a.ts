@@ -63,8 +63,8 @@ function summeK(): void {
         toolTip.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa; //schreibt in das tooltip.div die benötigten zahlen
     }
 }
-    
-    document.addEventListener("mousemove", function(Event) {
-        document.getElementById("tooltip").style.left = (Event.clientX + 10) + "px";
-        document.getElementById("tooltip").style.top = (Event.clientY + 10) + "px";
-    }); 
+//    
+//    document.addEventListener("mousemove", function(Event) {
+//        document.getElementById("tooltip").style.left = (Event.clientX + 10) + "px";
+//        document.getElementById("tooltip").style.top = (Event.clientY + 10) + "px";
+//    }); 
