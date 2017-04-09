@@ -27,7 +27,7 @@ body {
 }
 #pfeil {
 	display: none;
-	position: absolute;
+	
 	background-color: #70CF78;
 	color: white;
 	border:  solid 5px;
