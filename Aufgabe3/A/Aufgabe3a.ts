@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function(): void {
         rice = rice * 2;
         document.body.appendChild(element);
     }
-  var obereDivReihe = document.getElementsByTagName("div");
+  var erstereihe = document.getElementsByTagName("div");
     // Gibt den Feldern in der ersten Reihe bei einem Klick die Klasse "farbe", wodurch sie rot werden
     for (var i = 0; i < 9; i++) {
-        obereDivReihe[i].addEventListener("click", function () {
+        erstereihe[i].addEventListener("click", function () {
             this.classList.toggle("farbe"); 
             ricesumme();
         });
