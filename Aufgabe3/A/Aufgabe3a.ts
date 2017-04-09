@@ -31,18 +31,18 @@ document.addEventListener("DOMContentLoaded", function(): void {
         rice = rice * 2;
         document.body.appendChild(element);
     }
-   var obereDivReihe = document.getElementsByTagName("div");
+  var obereDivReihe = document.getElementsByTagName("div");
     // Gibt den Feldern in der ersten Reihe bei einem Klick die Klasse "farbe", wodurch sie rot werden
     for (var i = 0; i < 9; i++) {
         obereDivReihe[i].addEventListener("click", function () {
-            this.classList.toggle("farbe"); //f�rbt genau dieses angeklickte div durch die cssKlasse farbe ein
-            summeK(); // hier wird der funktion summeK bei aktivierung gesagt welches div angeklickt worden ist
+            this.classList.toggle("farbe"); 
+            ricesumme();
         });
     }
     var roteDivs = document.getElementsByClassName("farbe");
-    var summe = 0; // wird die summe aller angeklickten divs nachher ergeben 
+    var summe = 0; 
     var toolTip = document.getElementById("tooltip"); // div im html mit id wo die summe der angeklickten divs nacher angezeigt wird
-    function summeK() {
+    function ricesumme() {
         if (roteDivs.length == 0) {
             toolTip.style.display = "none"; //dann ist auch das tooltip.div nicht da 
         }
