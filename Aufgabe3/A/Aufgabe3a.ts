@@ -33,15 +33,9 @@ document.addEventListener("DOMContentLoaded", function(): void {
     }
     
 });
-let obereDivReihe: NodeListOf<HTMLElement> = document.getElementsByTagName("div");
+
     
-// Gibt den Feldern in der ersten Reihe bei einem Klick die Klasse "farbe", wodurch sie rot werden
-for (let i: number = 0; i < 9; i++) {                               //durchläuft die obere reihe der gesamtlänge nach
-    obereDivReihe[i].addEventListener("click", function(): void {   //registriert welches div genau angeklickt worden ist von der oberen schachbrettreihe
-        this.classList.toggle("farbe");                             //färbt genau dieses angeklickte div durch die cssKlasse farbe ein
-        summeK();                                                   // hier wird der funktion summeK bei aktivierung gesagt welches div angeklickt worden ist
-    });
-}
+    
 
     let roteDivs: NodeListOf<Element> = document.getElementsByClassName("farbe");
     let summe: number = 0; // wird die summe aller angeklickten divs nachher ergeben 
@@ -63,8 +57,3 @@ function summeK(): void {
         toolTip.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa; //schreibt in das tooltip.div die benötigten zahlen
     }
 }
-//    
-//    document.addEventListener("mousemove", function(Event) {
-//        document.getElementById("tooltip").style.left = (Event.clientX + 10) + "px";
-//        document.getElementById("tooltip").style.top = (Event.clientY + 10) + "px";
-//    }); 
