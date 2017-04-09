@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         for (var i = 0; i < gDivs.length; i++) {
             summe += Number(gDivs[i].textContent);
-            var hexa = summe.toString(16);
-            var dezi = summe.toString();
-            pfeil.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa;
+            var hexadezimal = summe.toString(16);
+            var dezimal = summe.toString();
+            pfeil.textContent = "Reis:" + "\r\n" + "Dezimal: " + dezimal + "\r\n" + "Hexadezimal: " + hexadezimal;
         }
     }
-    document.addEventListener("mousemove", function (Event) {
-        document.getElementById("pfeil").style.left = (Event.clientX + 10) + "px";
-        document.getElementById("pfeil").style.top = (Event.clientY + 10) + "px";
+    document.addEventListener("mousemove", function (event) {
+        document.getElementById("pfeil").style.left = (event.clientX + 10) + "px";
+        document.getElementById("pfeil").style.top = (event.clientY + 10) + "px";
     });
 });
 //# sourceMappingURL=Aufgabe3a.js.map
