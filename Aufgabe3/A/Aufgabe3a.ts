@@ -40,24 +40,24 @@ document.addEventListener("DOMContentLoaded", function(): void {
     }
     var gDivs = document.getElementsByClassName("farbe");
     var summe = 0; 
-    var toolTip = document.getElementById("tooltip"); // div im html mit id wo die summe der angeklickten divs nacher angezeigt wird
+    var pfeil = document.getElementById("pfeil"); 
     function ricesumme() {
         if (gDivs.length == 0) {
-            toolTip.style.display = "none"; //dann ist auch das tooltip.div nicht da 
+            pfeil.style.display = "none"; 
         }
         else {
-            toolTip.style.display = "inline-block"; //wenn nicht 0 divs angeklickt sind, dann wird das tooltip.div angezeigt
+            pfeil.style.display = "inline-block"; 
         }
         for (var i = 0; i < gDivs.length; i++) {
-            summe += Number(gDivs[i].textContent); //der nummerninhat der angeklickten divs summiert sich
-            var hexa = summe.toString(16); //berechnet die hexadezimalzahl aus der summe der reisk�rner der angeklickten divs
-            var dezi = summe.toString(); //berechnet die dezimalzahl aus der summe der reisk�rner der angeklickten divs
-            toolTip.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa; //schreibt in das tooltip.div die ben�tigten zahlen
+            summe += Number(gDivs[i].textContent); 
+            var hexa = summe.toString(16); 
+            var dezi = summe.toString(); 
+            pfeil.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa; 
         }
     }
     document.addEventListener("mousemove", function (Event) {
-        document.getElementById("tooltip").style.left = (Event.clientX + 10) + "px";
-        document.getElementById("tooltip").style.top = (Event.clientY + 10) + "px";
+        document.getElementById("pfeil").style.left = (Event.clientX + 10) + "px";
+        document.getElementById("pfeil").style.top = (Event.clientY + 10) + "px";
     });
 });
    

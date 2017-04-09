@@ -25,7 +25,7 @@ body {
 .farbe {
 	background-color:  #70CF78;
 }
-#tooltip {
+#pfeil {
 	display: none;
 	position: absolute;
 	background-color: #70CF78;
