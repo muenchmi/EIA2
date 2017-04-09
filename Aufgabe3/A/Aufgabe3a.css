@@ -19,9 +19,6 @@ body {
     color: white;
 }
 
-.board:nth-Child(8n+1) {
-	clear: both;
-}
 .farbe {
 	background-color:  #70CF78;
 }
