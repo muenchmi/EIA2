@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     let rice = 1;
     let zeile = 0;
-    for (let i = 0; i < 64; i++) {
+    let n = 64;
+    for (let i = 0; i < n; i++) {
         let element = document.createElement("div");
         element.textContent = rice.toString();
         //Umbruch

@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(): void {
     let rice: number = 1;
     let zeile: number = 0;
-
-    for (let i: number = 0; i < 64; i++) {
+    let n: number = 64;
+    for (let i: number = 0; i < n; i++) {
         let element: HTMLElement = document.createElement("div");
         element.textContent = rice.toString();
 
