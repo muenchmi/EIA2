@@ -19,7 +19,7 @@ body {
     color: white;
 }
 
-.board:nth-Child(8n+1) {
+.board:nth-Child(9n+1) {
 	clear: both;
 }
 .farbe {
