@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let element = document.createElement("div");
         element.textContent = rice.toString();
         //Umbruch
-        if (i % 9 == 0) {
+        if (i % 8 == 0) {
             zeile = zeile + 1;
         }
         //Schwarzweiß
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(element);
     }
     var erstereihe = document.getElementsByTagName("div");
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 9; i++) {
         erstereihe[i].addEventListener("click", function () {
             this.classList.toggle("farbe");
             ricesumme();
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             summe += Number(gDivs[i].textContent);
             var hexa = summe.toString(16);
             var dezi = summe.toString();
-            pfeil.textContent = "Summe vom Reis:" + "\r\n" + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa;
+            pfeil.textContent = "Summe vom Reis:" + "\r\n" /* absatz */ + "Dezimal: " + dezi + "\r\n" + "Hexadezimal: " + hexa;
         }
     }
     document.addEventListener("mousemove", function (Event) {
