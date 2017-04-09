@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let element = document.createElement("div");
         element.textContent = rice.toString();
         //Umbruch
-        if (i % 10 == 0) {
+        if (i % 8 == 0) {
             zeile = zeile + 1;
         }
         //Schwarzweiß

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
 
         
         //Umbruch
-        if (i % 10 == 0) {
+        if (i % 8 == 0) {
             zeile = zeile + 1;
         }
         //Schwarzweiß
