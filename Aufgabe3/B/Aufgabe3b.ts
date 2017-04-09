@@ -7,7 +7,7 @@
 //Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 //-->
 namespace Aufgabe3b {
-    let khand: NodeListOf<HTMLDivElement>;  // Zugriff auf diese div Elemente auf Hand
+    let hkarten: NodeListOf<HTMLDivElement>;  // Zugriff auf diese div Elemente auf Hand
     document.addEventListener("DOMContentLoaded", function(): void {
         let karten: string[] = ["Herz As",
             "Herz König",
@@ -54,7 +54,7 @@ namespace Aufgabe3b {
             //Karten vom Stapel in die Hand 
             function nimmeinekarte(): void {
                 let div: HTMLDivElement = document.createElement("div");
-           document.getElementsByClassName("hkarten").appendChild(div);
+           document.getElementsByID("hkarten").appendChild(div);
             //zufälligeKarte
             let n: number = Math.round(Math.random() * karten.length);
         }

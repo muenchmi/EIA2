@@ -22,7 +22,7 @@ body {
 .board:nth-Child(8n+1) {
 	clear: both;
 }
-.grün {
+.farbe {
 	background-color: #70EF70;
 }
 #tooltip {
