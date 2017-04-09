@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
             pfeil.style.display = "none";
         }
         else {
-            pfeil.style.display = "inline";
+            pfeil.style.display = "inline block";
         }
         for (var i = 0; i < gDivs.length; i++) {
             x += Number(gDivs[i].textContent);
