@@ -1,3 +1,5 @@
+//Hatte hilfe von Janett Stüwe 
+
 document.addEventListener("DOMContentLoaded", function(): void {
     let rice: number = 1;
     let zeile: number = 0;
