@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
         if (i % 8 == 0) {
             zeile = zeile + 1;
         }
-        rice *= 2;
+        rice = rice * 2;
         document.body.appendChild(element);
     }
 });

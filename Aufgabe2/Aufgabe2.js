@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (i % 8 == 0) {
             zeile = zeile + 1;
         }
-        rice *= 2;
+        rice = rice * 2;
         document.body.appendChild(element);
     }
 });
