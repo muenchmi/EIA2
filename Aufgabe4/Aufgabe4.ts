@@ -11,14 +11,14 @@ namespace L4_Canvas {
         crc2 = canvas.getContext("2d");
         console.log(crc2);
 
-        crc2.fillStyle = "#0000ff";
+        crc2.fillStyle = "#2f9e80";
         crc2.fillRect(0, 0, canvas.width, canvas.height);
 
         crc2.moveTo(0, 0);
         crc2.lineTo(canvas.width, canvas.height);
         crc2.stroke();
 
-        drawTriangle(200, 150, "#00ff00", "#ff0000");
+//        drawTriangle(200, 150, "#00ff00", "#ff0000");
     }
 
     function drawTriangle(_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
