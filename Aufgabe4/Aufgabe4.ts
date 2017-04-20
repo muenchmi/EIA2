@@ -8,11 +8,16 @@ namespace BLUMEN {
         canvas.width = 600;
         canvas.height = 400;
         console.log(canvas);
-
         crc2 = canvas.getContext("2d");
         console.log(crc2);
         crc2.fillStyle = "#8ad0ea";
         crc2.fillRect(0, 0, canvas.width, canvas.height);
+//        let myFlow = crc2.createLinearGradient(0, 0, 0, 200);
+//        myFlow.addColorStop(0, "#8ad0ea");
+//        myFlow.addColorStop(1, "white");
+//        crc2.fillStyle = myFlow;
+//        crc2.fillRect(20, 20, 150, 100);
+
 
         //hintergrund Berg
         crc2.beginPath();
@@ -54,14 +59,30 @@ namespace BLUMEN {
         crc2.fillStyle = "#a9bc9c";
         crc2.fill();
 
-        //Wiese
+        //hinten Wiese
         crc2.beginPath();
-        crc2.moveTo(0, 300);
+        crc2.moveTo(0, 250);
         crc2.quadraticCurveTo(200, 225, 600, 300);
         crc2.lineTo(600, 400);
         crc2.lineTo(0, 400);
         crc2.closePath();
+        crc2.fillStyle = "#1f471e";
+        crc2.fill();
+
+        //vorne Wiese
+        crc2.beginPath();
+        crc2.moveTo(0, 325);
+        crc2.quadraticCurveTo(350, 225, 600, 225);
+        crc2.lineTo(600, 400);
+        crc2.lineTo(0, 400);
+        crc2.closePath();
         crc2.fillStyle = "#34ba43";
+        crc2.fill();
+
+        //Sonne
+        crc2.beginPath();
+        crc2.arc(75, 50, 25, 0, 2 * Math.PI);
+        crc2.fillStyle = "#f9cb11";
         crc2.fill();
 
 
