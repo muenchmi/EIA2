@@ -13,8 +13,8 @@ namespace BLUMEN {
         console.log(crc2);
         crc2.fillStyle = "#8ad0ea";
         crc2.fillRect(0, 0, canvas.width, canvas.height);
-        
-         //Berg
+
+        //hintergrund Berg
         crc2.beginPath();
         crc2.moveTo(0, 50);
         crc2.lineTo(50, 25);
@@ -30,8 +30,29 @@ namespace BLUMEN {
         crc2.closePath();
         crc2.fillStyle = "#394233";
         crc2.fill();
-        
-          //Wiese
+
+        //vorderer Berg
+        crc2.beginPath();
+        crc2.moveTo(0, 75);
+        crc2.lineTo(25, 50);
+        crc2.lineTo(75, 100);
+        crc2.lineTo(125, 25);
+        crc2.lineTo(175, 75);
+        crc2.lineTo(250, 0);
+        crc2.lineTo(300, 25);
+        crc2.lineTo(325, 0);
+        crc2.lineTo(400, 100);
+        crc2.lineTo(475, 25);
+        crc2.lineTo(500, 50);
+        crc2.lineTo(550, 0);
+        crc2.lineTo(600, 100);
+        crc2.lineTo(600, 200);
+        crc2.lineTo(0, 200);
+        crc2.closePath();
+        crc2.fillStyle = "#a9bc9c";
+        crc2.fill();
+
+        //Wiese
         crc2.beginPath();
         crc2.moveTo(0, 250);
         crc2.lineTo(600, 250);
@@ -40,10 +61,10 @@ namespace BLUMEN {
         crc2.closePath();
         crc2.fillStyle = "#34ba43";
         crc2.fill();
-        
-        
-      
-        
+
+
+
+
     }
 
 }
