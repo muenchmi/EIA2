@@ -5,8 +5,8 @@ var BLUMEN;
     function init(_event) {
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
-        canvas.width = 800;
-        canvas.height = 600;
+        canvas.width = 600;
+        canvas.height = 400;
         console.log(canvas);
         crc2 = canvas.getContext("2d");
         console.log(crc2);
