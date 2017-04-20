@@ -5,8 +5,8 @@ namespace BLUMEN {
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
         canvas = document.getElementsByTagName("canvas")[0];
-        canvas.width = 400;
-        canvas.height = 300;
+        canvas.width = 800;
+        canvas.height = 600;
         console.log(canvas);
 
         crc2 = canvas.getContext("2d");
@@ -14,4 +14,6 @@ namespace BLUMEN {
 
         crc2.fillStyle = "#8ad0ea";
         crc2.fillRect(0, 0, canvas.width, canvas.height);
-    }}
+    }
+
+}
