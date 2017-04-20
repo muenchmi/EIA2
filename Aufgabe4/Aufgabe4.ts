@@ -16,15 +16,18 @@ namespace BLUMEN {
 
         //hintergrund Berg
         crc2.beginPath();
-        crc2.moveTo(0, 175);
-        crc2.lineTo(50, 150);
-        crc2.lineTo(100, 200);
-        crc2.lineTo(200, 100);
+        crc2.moveTo(0, 125);
+        crc2.lineTo(25, 110);
+        crc2.lineTo(75, 150);
+        crc2.lineTo(150, 100);
+        crc2.lineTo(225, 175);
+        crc2.lineTo(300, 100);
         crc2.lineTo(350, 150);
-        crc2.lineTo(400, 120);
-        crc2.lineTo(450, 175);
-        crc2.lineTo(575, 125);
-        crc2.lineTo(600, 150);
+        crc2.lineTo(400, 125);
+        crc2.lineTo(450, 150);
+        crc2.lineTo(475, 150);
+        crc2.lineTo(550, 75);
+        crc2.lineTo(600, 100);
         crc2.lineTo(600, 300);
         crc2.lineTo(0, 300);
         crc2.closePath();
@@ -42,9 +45,8 @@ namespace BLUMEN {
         crc2.lineTo(300, 175);
         crc2.lineTo(350, 120);
         crc2.lineTo(400, 175);
-        crc2.lineTo(450, 150);
-        crc2.lineTo(500, 125);
-        crc2.lineTo(550, 175);
+        crc2.lineTo(475, 75);
+        crc2.lineTo(550, 150);
         crc2.lineTo(600, 100);
         crc2.lineTo(600, 300);
         crc2.lineTo(0, 300);
@@ -54,8 +56,8 @@ namespace BLUMEN {
 
         //Wiese
         crc2.beginPath();
-        crc2.moveTo(0, 250);
-        crc2.lineTo(600, 250);
+        crc2.moveTo(0, 300);
+        crc2.quadraticCurveTo(200, 225, 600, 300);
         crc2.lineTo(600, 400);
         crc2.lineTo(0, 400);
         crc2.closePath();
