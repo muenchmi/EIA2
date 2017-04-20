@@ -11,10 +11,9 @@ namespace BLUMEN {
 
         crc2 = canvas.getContext("2d");
         console.log(crc2);
-
-//        crc2.fillStyle = "#8ad0ea";
+        crc2.fillStyle = "#8ad0ea";
         crc2.fillRect(0, 0, canvas.width, canvas.height);
-        
+
         //Wiese
         crc2.beginPath();
         crc2.moveTo(0, 250);
