@@ -37,7 +37,7 @@ var BLUMEN;
         crc2.lineTo(175, 175);
         crc2.lineTo(250, 100);
         crc2.lineTo(300, 175);
-        crc2.lineTo(325, 120);
+        crc2.lineTo(350, 120);
         crc2.lineTo(400, 175);
         crc2.lineTo(450, 150);
         crc2.lineTo(500, 125);
