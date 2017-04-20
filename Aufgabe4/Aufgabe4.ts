@@ -41,9 +41,9 @@ namespace BLUMEN {
         crc2.lineTo(250, 100);
         crc2.lineTo(300, 175);
         crc2.lineTo(325, 120);
-        crc2.lineTo(400, 200);
-        crc2.lineTo(475, 175);
-        crc2.lineTo(500, 120);
+        crc2.lineTo(400, 175);
+        crc2.lineTo(450, 150);
+        crc2.lineTo(500, 125);
         crc2.lineTo(550, 175);
         crc2.lineTo(600, 200);
         crc2.lineTo(600, 300);
