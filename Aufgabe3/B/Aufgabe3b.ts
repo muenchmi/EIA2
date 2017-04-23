@@ -4,11 +4,16 @@
 //Matrikel:  254180 
 //Datum: 09.04.2017
 //    
-//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert
+//hatte hilfe von Janett Stüwe.
 //-->
-namespace Aufgabe3b {
-    let hkarten: NodeListOf<HTMLDivElement>;  // Zugriff auf diese div Elemente auf Hand
+    let deck: HTMLElement;
+    let karten: string[];
+    let hkarten: NodeListOf<HTMLDivElement>;
+    let ablage: HTMLDivElement;
     document.addEventListener("DOMContentLoaded", function(): void {
+        deck = document.getElementById("deck");
+        deck.addEventListener("click", addhkarten);
         let karten: string[] = ["Herz As",
             "Herz König",
             "Herz Dame",
@@ -42,36 +47,43 @@ namespace Aufgabe3b {
             "Kreuz 8",
             "Kreuz 7"
         ];
+        hkarten = <NodeListOf<HTMLDivElement>>document.getElementsByClassName("hkarten");
+        for (let x: number = 0; x < hkarten.length; x++) {
+            hkarten[x].addEventListener("click", addablage);
+        }
+        ablage = <HTMLDivElement>document.getElementById("ablage");
 
-        //(max. 5)
-        let deck: HTMLElement = document.getElementsByClassName("deck"); // HTML div Elemente
-        deck.addEventListener("click", function(): void {
-            //max 5
-            let kartenaufderhand: number = document.getElementsByClassName("hkarten");
-            if (kartenaufderhand < 5) {
-                nimmeinekarte();
-            }
-            //Karten vom Stapel in die Hand 
-            function nimmeinekarte(): void {
-                let div: HTMLDivElement = document.createElement("div");
-           document.getElementsByID("hkarten").appendChild(div);
-            //zufälligeKarte
-            let n: number = Math.round(Math.random() * karten.length);
+    });
+
+    function addhkarten(): void {
+
+        let randomCard: string = karten.splice(Math.round(Math.random() * (karten.length - 1)), 1)[0];
+        let freeHand: HTMLDivElement = findEmpty();
+        if (freeHand != null) {
+            freeHand.innerText = randomCard;
         }
 
-       //Karten weglegen
-      div.addEventListener("click", function(): void {
-         let kartenweg: string[] = [];
-         let kartenwert: string = div.innerText;
-         let kartenhaufen: number = kartenweg.push(kartenwert);
-
-         document.getElementByClassName("weg").innerText = kartenwert;
-                  //Divlöschen
-            div.parentNode.removeChild(div);
-        });
+        if (karten.length === 0) {
+            deck.style.display = "none";
+        }
     }
-//});
+    function findEmpty(): HTMLDivElement {
 
+        for (let i: number = 0; i < hkarten.length; i++) {
+            if (hkarten[i].textContent === "") { //wenn Inhalt drin ist 
+                return hkarten[i];
+            }
+        }
+
+        return null;
+    }
+
+    function addablage(_event: Event): void {
+        let element: HTMLDivElement = <HTMLDivElement>_event.target;
+        ablage.textContent = element.textContent;
+        element.textContent = "";
+
+    }
 
 
 
