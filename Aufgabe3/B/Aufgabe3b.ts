@@ -63,7 +63,7 @@
             freeHand.innerText = randomCard;
         }
 
-        if (karten.length === 0) {
+        if (karten.length == 0) {
             deck.style.display = "none";
         }
     }
