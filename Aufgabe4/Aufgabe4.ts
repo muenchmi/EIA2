@@ -199,7 +199,7 @@ namespace BLUMEN {
 
         //Kopf
         crc2.beginPath();
-        crc2.arc(x + 5, y - 35, 6, 0, 2 * Math.PI);
+        crc2.arc(x + 5, y - 33, 6, 0, 2 * Math.PI);
         crc2.fillStyle = "#ea8e04";
         crc2.closePath();
         crc2.fill();
@@ -209,12 +209,12 @@ namespace BLUMEN {
         crc2.closePath();
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(x + 1, y - 40, 6, 0, 2 * Math.PI);
+        crc2.arc(x + 1, y - 38, 6, 0, 2 * Math.PI);
         crc2.fillStyle = "#ea8e04";
         crc2.closePath();
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(x - 5, y - 35, 6, 0, 2 * Math.PI);
+        crc2.arc(x - 5, y - 33, 6, 0, 2 * Math.PI);
         crc2.fillStyle = "#ea8e04";
         crc2.closePath();
         crc2.fill();
@@ -224,7 +224,7 @@ namespace BLUMEN {
         crc2.closePath();
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(x + 1, y - 30, 6, 0, 2 * Math.PI);
+        crc2.arc(x + 1, y - 30, 4, 0, 2 * Math.PI);
         crc2.fillStyle = "#1e1911";
         crc2.closePath();
         crc2.fill();
