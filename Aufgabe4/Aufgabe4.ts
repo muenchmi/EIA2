@@ -211,7 +211,7 @@ namespace BLUMEN {
  
     }
    //Blumenwiese random
-    for (var i: number = 0; i < 12; i++) {
+    for (var i: number = 0; i < 18; i++) {
         let randomBlumenWiese: number = Math.floor((Math.random() * 2) + 0);
         let x: number = Math.floor((Math.random() * (600 - 200)) + 200);
         let y: number = Math.floor((Math.random() * (400 - 350)) + 350);

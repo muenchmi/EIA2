@@ -192,7 +192,7 @@ var BLUMEN;
             crc2.fill();
         }
         //Blumenwiese random
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i < 18; i++) {
             let randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
             let x = Math.floor((Math.random() * (600 - 200)) + 200);
             let y = Math.floor((Math.random() * (400 - 350)) + 350);
