@@ -16,7 +16,19 @@ var BLUMEN;
         //        myFlow.addColorStop(0, "#8ad0ea");
         //        myFlow.addColorStop(1, "white");
         //        crc2.fillStyle = myFlow;
-        //        crc2.fillRect(20, 20, 150, 100);
+        //  c2.fillRect(20, 20, 150, 100);
+        //Wolke3
+        crc2.beginPath();
+        crc2.arc(445, 75, 10, 0, 2 * Math.PI);
+        crc2.arc(450, 83, 10, 0, 2 * Math.PI);
+        crc2.arc(450, 68, 10, 0, 2 * Math.PI);
+        crc2.arc(455, 75, 10, 0, 2 * Math.PI);
+        crc2.arc(460, 83, 10, 0, 2 * Math.PI);
+        crc2.arc(460, 68, 10, 0, 2 * Math.PI);
+        crc2.arc(465, 75, 10, 0, 2 * Math.PI);
+        crc2.arc(463, 75, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "white";
+        crc2.fill();
         //hintergrund Berg
         crc2.beginPath();
         crc2.moveTo(0, 125);
@@ -64,6 +76,15 @@ var BLUMEN;
         crc2.closePath();
         crc2.fillStyle = "#1f471e";
         crc2.fill();
+        //See
+        crc2.beginPath();
+        crc2.moveTo(0, 305);
+        crc2.quadraticCurveTo(125, 200, 600, 350);
+        crc2.lineTo(600, 400);
+        crc2.lineTo(0, 600);
+        crc2.closePath();
+        crc2.fillStyle = "#3d7dff";
+        crc2.fill();
         //vorne Wiese
         crc2.beginPath();
         crc2.moveTo(0, 325);
@@ -77,6 +98,76 @@ var BLUMEN;
         crc2.beginPath();
         crc2.arc(75, 50, 25, 0, 2 * Math.PI);
         crc2.fillStyle = "#f9cb11";
+        crc2.fill();
+        //Wolke
+        crc2.beginPath();
+        crc2.arc(250, 50, 10, 0, 2 * Math.PI);
+        crc2.arc(255, 57, 10, 0, 2 * Math.PI);
+        crc2.arc(255, 43, 10, 0, 2 * Math.PI);
+        crc2.arc(260, 50, 10, 0, 2 * Math.PI);
+        crc2.arc(265, 57, 10, 0, 2 * Math.PI);
+        crc2.arc(265, 43, 10, 0, 2 * Math.PI);
+        crc2.arc(270, 50, 10, 0, 2 * Math.PI);
+        crc2.arc(267, 50, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "white";
+        crc2.fill();
+        //Wolke2
+        crc2.beginPath();
+        crc2.arc(40, 60, 10, 0, 2 * Math.PI);
+        crc2.arc(45, 67, 10, 0, 2 * Math.PI);
+        crc2.arc(45, 53, 10, 0, 2 * Math.PI);
+        crc2.arc(50, 60, 10, 0, 2 * Math.PI);
+        crc2.arc(55, 67, 10, 0, 2 * Math.PI);
+        crc2.arc(55, 53, 10, 0, 2 * Math.PI);
+        crc2.arc(60, 60, 10, 0, 2 * Math.PI);
+        crc2.arc(57, 60, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "white";
+        crc2.fill();
+        drawBlume(200, 400);
+        drawBlume2(500, 400);
+    }
+    //Blumenwiese random
+    for (var i = 0; i < 12; i++) {
+        let BlumenWiese = Math.floor((Math.random() * 2) + 0);
+        let x = Math.floor((Math.random() * (600 - 300)) + 300);
+        let y = Math.floor((Math.random() * (400 - 150)) + 150);
+        switch (BlumenWiese) {
+            case 0:
+                drawBlume(x, y);
+                break;
+            case 1:
+                drawBlume2(x, y);
+                break;
+        }
+    }
+    //Blume
+    function drawBlume(x, y) {
+        //Stiel
+        crc2.beginPath();
+        crc2.fillStyle = "#26a001";
+        crc2.fillRect(x, y - 40, 3, 60);
+        crc2.closePath();
+        crc2.fill();
+        //Kopf
+        crc2.beginPath();
+        crc2.arc(x + 4, y - 40, 5, 0, 2 * Math.PI);
+        crc2.arc(x + 4, y - 40, 5, 0, 2 * Math.PI);
+        crc2.arc(x + 5, y - 40, 5, 0, 2 * Math.PI);
+        crc2.arc(x + 5, y - 40, 5, 0, 2 * Math.PI);
+        crc2.arc(x + 5, y - 40, 5, 0, 2 * Math.PI);
+        crc2.arc(x + 4, y - 40, 5, 0, 2 * Math.PI);
+        crc2.arc(x + 4, y - 40, 5, 0, 2 * Math.PI);
+        crc2.arc(x + 5, y - 40, 5, 0, 2 * Math.PI);
+        crc2.fillStyle = "white";
+        crc2.fill();
+    }
+    //Blume2
+    function drawBlume2(x, y) {
+        //Stiel
+        crc2.beginPath();
+        crc2.fillStyle = "#26a000";
+        crc2.fillRect(x, y - 30, 3, 60);
+        crc2.closePath();
         crc2.fill();
     }
 })(BLUMEN || (BLUMEN = {}));
