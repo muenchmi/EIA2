@@ -8,13 +8,13 @@
 //hatte hilfe von Janett St�we.
 //-->
 let deck;
-let karten;
+let cards;
 let hkarten;
 let ablage;
 document.addEventListener("DOMContentLoaded", function () {
     deck = document.getElementById("deck");
     deck.addEventListener("click", addhkarten);
-    let karten = ["Herz As",
+    let cards = ["Herz As",
         "Herz K�nig",
         "Herz Dame",
         "Herz Bube",
@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
     ablage = document.getElementById("ablage");
 });
 function addhkarten() {
-    let randomCard = karten.splice(Math.round(Math.random() * (karten.length - 1)), 1)[0];
+    let randomCard = cards.splice(Math.round(Math.random() * (cards.length - 1)), 1)[0];
     let freeHand = findEmpty();
     if (freeHand != null) {
         freeHand.innerText = randomCard;
     }
-    if (karten.length === 0) {
+    if (cards.length === 0) {
         deck.style.display = "none";
     }
 }

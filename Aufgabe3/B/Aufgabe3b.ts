@@ -8,13 +8,13 @@
 //hatte hilfe von Janett Stüwe.
 //-->
     let deck: HTMLElement;
-    let karten: string[];
+    let cards: string[];
     let hkarten: NodeListOf<HTMLDivElement>;
     let ablage: HTMLDivElement;
     document.addEventListener("DOMContentLoaded", function(): void {
         deck = document.getElementById("deck");
         deck.addEventListener("click", addhkarten);
-        let karten: string[] = ["Herz As",
+        let cards: string[] = ["Herz As",
             "Herz König",
             "Herz Dame",
             "Herz Bube",
@@ -57,13 +57,13 @@
 
     function addhkarten(): void {
 
-        let randomCard: string = karten.splice(Math.round(Math.random() * (karten.length - 1)), 1)[0];
+        let randomCard: string = cards.splice(Math.round(Math.random() * (cards.length - 1)), 1)[0];
         let freeHand: HTMLDivElement = findEmpty();
         if (freeHand != null) {
             freeHand.innerText = randomCard;
         }
 
-        if (karten.length === 0) {
+        if (cards.length === 0) {
             deck.style.display = "none";
         }
     }
