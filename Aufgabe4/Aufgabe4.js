@@ -123,90 +123,88 @@ var BLUMEN;
         crc2.arc(57, 60, 10, 0, 2 * Math.PI);
         crc2.fillStyle = "white";
         crc2.fill();
-        drawBlume(200, 400);
-        drawBlume2(500, 400);
-    }
-    //Blumenwiese random
-    for (var i = 0; i < 12; i++) {
-        let BlumenWiese = Math.floor((Math.random() * 2) + 0);
-        let x = Math.floor((Math.random() * (600 - 300)) + 300);
-        let y = Math.floor((Math.random() * (400 - 150)) + 150);
-        switch (BlumenWiese) {
-            case 0:
-                drawBlume(x, y);
-                break;
-            case 1:
-                drawBlume2(x, y);
-                break;
+        //Blume
+        function drawBlume(x, y) {
+            //Stiel
+            crc2.beginPath();
+            crc2.fillStyle = "#26a001";
+            crc2.fillRect(x, y - 40, 3, 60);
+            crc2.closePath();
+            crc2.fill();
+            //Kopf
+            crc2.beginPath();
+            crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 5, y - 45, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 2, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 4, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "white";
+            crc2.fill();
         }
-    }
-    //Blume
-    function drawBlume(x, y) {
-        //Stiel
-        crc2.beginPath();
-        crc2.fillStyle = "#26a001";
-        crc2.fillRect(x, y - 40, 3, 60);
-        crc2.closePath();
-        crc2.fill();
-        //Kopf
-        crc2.beginPath();
-        crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 5, y - 45, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 2, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 4, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
-        crc2.fill();
-    }
-    //Blume2
-    function drawBlume2(x, y) {
-        //Stiel
-        crc2.beginPath();
-        crc2.fillStyle = "#26a000";
-        crc2.fillRect(x, y - 30, 3, 60);
-        crc2.closePath();
-        crc2.fill();
-        //Kopf
-        crc2.beginPath();
-        crc2.arc(x + 5, y - 33, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x + 5, y - 25, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x + 1, y - 38, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x - 5, y - 33, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x - 5, y - 25, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x + 1, y - 30, 4, 0, 2 * Math.PI);
-        crc2.fillStyle = "#1e1911";
-        crc2.closePath();
-        crc2.fill();
+        //Blume2
+        function drawBlume2(x, y) {
+            //Stiel
+            crc2.beginPath();
+            crc2.fillStyle = "#26a000";
+            crc2.fillRect(x, y - 30, 3, 60);
+            crc2.closePath();
+            crc2.fill();
+            //Kopf
+            crc2.beginPath();
+            crc2.arc(x + 5, y - 33, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x + 5, y - 25, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x + 1, y - 38, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x - 5, y - 33, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x - 5, y - 25, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x + 1, y - 30, 4, 0, 2 * Math.PI);
+            crc2.fillStyle = "#1e1911";
+            crc2.closePath();
+            crc2.fill();
+        }
+        //Blumenwiese random
+        for (var i = 0; i < 12; i++) {
+            let BlumenWiese = Math.floor((Math.random() * 2) + 0);
+            let x = Math.floor((Math.random() * (600 - 200)) + 200);
+            let y = Math.floor((Math.random() * (400 - 350)) + 350);
+            switch (BlumenWiese) {
+                case 0:
+                    drawBlume(x, y);
+                    break;
+                case 1:
+                    drawBlume2(x, y);
+                    break;
+            }
+        }
     }
 })(BLUMEN || (BLUMEN = {}));
 //# sourceMappingURL=Aufgabe4.js.map
