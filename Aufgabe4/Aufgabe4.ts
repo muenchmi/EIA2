@@ -212,11 +212,11 @@ namespace BLUMEN {
     }
    //Blumenwiese random
     for (var i: number = 0; i < 12; i++) {
-        let BlumenWiese: number = Math.floor((Math.random() * 2) + 0);
+        let randomBlumenWiese: number = Math.floor((Math.random() * 2) + 0);
         let x: number = Math.floor((Math.random() * (600 - 200)) + 200);
         let y: number = Math.floor((Math.random() * (400 - 350)) + 350);
 
-        switch (BlumenWiese) {
+        switch (randomBlumenWiese) {
             case 0:
                 drawBlume(x, y);
                 break;

@@ -193,10 +193,10 @@ var BLUMEN;
         }
         //Blumenwiese random
         for (var i = 0; i < 12; i++) {
-            let BlumenWiese = Math.floor((Math.random() * 2) + 0);
+            let randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
             let x = Math.floor((Math.random() * (600 - 200)) + 200);
             let y = Math.floor((Math.random() * (400 - 350)) + 350);
-            switch (BlumenWiese) {
+            switch (randomBlumenWiese) {
                 case 0:
                     drawBlume(x, y);
                     break;
