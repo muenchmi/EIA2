@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ablage = document.getElementById("ablage");
 });
 function addhkarten() {
-    let randomCard = cards.splice(Math.round(Math.random() * (cards.length - 1)), 1)[0];
+    let randomCard = cards.splice(Math.round(Math.random() * (cards.length - 1)), 1)[0]; //auf eine Karte zugreifen diese nehmen und genau diese aus dem Stapel/ Array l�schen
     let freeHand = findEmpty();
     if (freeHand != null) {
         freeHand.innerText = randomCard;
