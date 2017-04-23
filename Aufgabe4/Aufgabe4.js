@@ -128,7 +128,7 @@ var BLUMEN;
             //Stiel
             crc2.beginPath();
             crc2.fillStyle = "#26a001";
-            crc2.fillRect(x, y - 40, 3, 60);
+            crc2.fillRect(x, y - 40, 3, 35);
             crc2.closePath();
             crc2.fill();
             //Kopf
@@ -156,7 +156,7 @@ var BLUMEN;
             //Stiel
             crc2.beginPath();
             crc2.fillStyle = "#26a000";
-            crc2.fillRect(x, y - 30, 3, 60);
+            crc2.fillRect(x, y - 30, 3, 40);
             crc2.closePath();
             crc2.fill();
             //Kopf

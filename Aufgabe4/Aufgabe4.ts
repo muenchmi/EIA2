@@ -140,7 +140,7 @@ namespace BLUMEN {
         //Stiel
         crc2.beginPath();
         crc2.fillStyle = "#26a001";
-        crc2.fillRect(x, y - 40, 3, 60);
+        crc2.fillRect(x, y - 40, 3, 35);
         crc2.closePath();
         crc2.fill();
 
@@ -151,7 +151,7 @@ namespace BLUMEN {
         crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
         crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
         crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
+        crc2.arc(x    , y - 48, 6, 0, 2 * Math.PI);
         crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
         crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
         crc2.arc(x - 5, y - 45, 6, 0, 2 * Math.PI);
@@ -160,7 +160,7 @@ namespace BLUMEN {
         crc2.arc(x - 4, y - 40, 6, 0, 2 * Math.PI);
         crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
         crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
+        crc2.arc(x    , y - 48, 6, 0, 2 * Math.PI);
         crc2.fillStyle = "white";
         crc2.fill();
 
@@ -173,7 +173,7 @@ namespace BLUMEN {
         //Stiel
         crc2.beginPath();
         crc2.fillStyle = "#26a000";
-        crc2.fillRect(x, y - 30, 3, 60);
+        crc2.fillRect(x, y - 30, 3, 40);
         crc2.closePath();
         crc2.fill();
 
