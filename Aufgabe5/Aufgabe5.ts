@@ -1,6 +1,10 @@
 namespace BLUMEN {
     window.addEventListener("load", init);
     let crc2: CanvasRenderingContext2D;
+    let imgData: ImageData;
+    let x: number[] = [];
+    let y: number[] = [];
+    let n: number = 10;
 
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
@@ -134,191 +138,191 @@ namespace BLUMEN {
         crc2.fillStyle = "white";
         crc2.fill();
 
-       
-    //Blume
-    function drawBlume(x: number, y: number): void {
-        //Stiel
+        //Bienenstock
         crc2.beginPath();
-        crc2.fillStyle = "#26a001";
-        crc2.fillRect(x, y - 40, 3, 35);
+        crc2.arc(480, 290, 10, 0, 2 * Math.PI);
+        crc2.arc(480, 275, 10, 0, 2 * Math.PI);
+        crc2.arc(480, 260, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "#e5c300";
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(520, 290, 10, 0, 2 * Math.PI);
+        crc2.arc(520, 275, 10, 0, 2 * Math.PI);
+        crc2.arc(520, 260, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "#e5c300";
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillRect(480, 300, 40, -50);
+        crc2.fillStyle = "#e5c300";
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(500, 260, 25, 0, 2 * Math.PI);
+        crc2.arc(500, 260, 25, 0, 2 * Math.PI);
+        crc2.arc(500, 260, 25, 0, 2 * Math.PI);
+        crc2.fillStyle = "#e5c300";
         crc2.closePath();
         crc2.fill();
 
-        //Kopf
+        //EingangBienenstock
         crc2.beginPath();
-        crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x    , y - 48, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 5, y - 45, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 2, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 4, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
-        crc2.arc(x    , y - 48, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
+        crc2.fillStyle = "black";
+        crc2.fillRect(495, 272, 10, 10);
+        crc2.closePath();
         crc2.fill();
-
-
-
-
-    }
-    //Blume2
-    function drawBlume2(x: number, y: number): void {
-        //Stiel
         crc2.beginPath();
-        crc2.fillStyle = "#26a000";
-        crc2.fillRect(x, y - 30, 3, 40);
+        crc2.arc(500, 272, 5, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
         crc2.closePath();
         crc2.fill();
 
-        //Kopf
-        crc2.beginPath();
-        crc2.arc(x + 5, y - 33, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x + 5, y - 25, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x + 1, y - 38, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x - 5, y - 33, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x - 5, y - 25, 6, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ea8e04";
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(x + 1, y - 30, 4, 0, 2 * Math.PI);
-        crc2.fillStyle = "#1e1911";
-        crc2.closePath();
-        crc2.fill();
- 
-    }
-   //Blumenwiese random
-    for (var i: number = 0; i < 22; i++) {
-        let randomBlumenWiese: number = Math.floor((Math.random() * 2) + 0);
-        let x: number = Math.floor((Math.random() * (600 - 200)) + 200);
-        let y: number = Math.floor((Math.random() * (400 - 350)) + 350);
 
-        switch (randomBlumenWiese) {
-            case 0:
-                drawBlume(x, y);
-                break;
-            case 1:
-                drawBlume2(x, y);
-                break;
+        //Blume
+        function drawBlume(x: number, y: number): void {
+            //Stiel
+            crc2.beginPath();
+            crc2.fillStyle = "#26a001";
+            crc2.fillRect(x, y - 40, 3, 35);
+            crc2.closePath();
+            crc2.fill();
+
+            //Kopf
+            crc2.beginPath();
+            crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 5, y - 45, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 2, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 4, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
+            crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "white";
+            crc2.fill();
+        }
+        //Blume2
+        function drawBlume2(x: number, y: number): void {
+            //Stiel
+            crc2.beginPath();
+            crc2.fillStyle = "#26a000";
+            crc2.fillRect(x, y - 30, 3, 40);
+            crc2.closePath();
+            crc2.fill();
+
+            //Kopf
+            crc2.beginPath();
+            crc2.arc(x + 5, y - 33, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x + 5, y - 25, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x + 1, y - 38, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x - 5, y - 33, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x - 5, y - 25, 6, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ea8e04";
+            crc2.closePath();
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(x + 1, y - 30, 4, 0, 2 * Math.PI);
+            crc2.fillStyle = "#1e1911";
+            crc2.closePath();
+            crc2.fill();
+
+
+        }
+
+        //Blumenwiese random
+        for (var i: number = 0; i < 22; i++) {
+            let randomBlumenWiese: number = Math.floor((Math.random() * 2) + 0);
+            let x: number = Math.floor((Math.random() * (600 - 200)) + 200);
+            let y: number = Math.floor((Math.random() * (400 - 350)) + 350);
+
+            switch (randomBlumenWiese) {
+                case 0:
+                    drawBlume(x, y);
+                    break;
+                case 1:
+                    drawBlume2(x, y);
+                    break;
+            }
+        }
+        //Bildspeichern
+        imgData = crc2.getImageData(0, 0, 600, 400);
+
+        //Bienenstartpunkt
+        for (let i: number = 0; i < n; i++) {
+            x[i] = 500;
+            y[i] = 275;
+        }
+
+        window.setTimeout(animation, 2);
+        canvas.addEventListener("click", drawnewBiene);
+
+        function drawnewBiene(): void {
+            x.push(500);
+            y.push(275);
+        }
+
+        function animation(): void {
+            //Bild einsetzen anstelle x=0 y=0
+            crc2.putImageData(imgData, 0, 0);
+
+            for (let i: number = 0; i < x.length; i++) {
+                x[i] += Math.random() * 1.5 - 1; //veränderung der Flugbahn
+                y[i] += Math.random() * 2 - 0.99;
+
+                if (x[i] >= 600)
+                    x[i] = 0;
+                if (x[i] < 0)
+                    x[i] = 600;
+                if (y[i] > 400)
+                    y[i] = 0;
+                if (y[i] <= 0)
+                    y[i] = 400;
+
+                drawBiene(x[i], y[i]);
+            }
+            window.setTimeout(animation, 20); //Länge
+        }
+        //ICH BIN EINE BIENE
+        function drawBiene(_x: number, _y: number): void {
+            crc2.beginPath();
+            crc2.arc(_x, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.arc(_x + 1, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "#e5c300";
+            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.arc(_x + 2, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.closePath();
         }
     }
-
-    }
-//
-//    //Blumenwiese random
-//    for (var i: number = 0; i < 12; i++) {
-//        let BlumenWiese: number = Math.floor((Math.random() * 2) + 0);
-//        let x: number = Math.floor((Math.random() * (600 - 300)) + 300);
-//        let y: number = Math.floor((Math.random() * (400 - 150)) + 150);
-//
-//        switch (BlumenWiese) {
-//            case 0:
-//                drawBlume(x, y);
-//                break;
-//            case 1:
-//                drawBlume2(x, y);
-//                break;
-//        }
-//    }
-
-//    //Blume
-//    function drawBlume(x: number, y: number): void {
-//        //Stiel
-//        crc2.beginPath();
-//        crc2.fillStyle = "#26a001";
-//        crc2.fillRect(x, y - 40, 3, 60);
-//        crc2.closePath();
-//        crc2.fill();
-//
-//        //Kopf
-//        crc2.beginPath();
-//        crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
-//        crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
-//        crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
-//        crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
-//        crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
-//        crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
-//        crc2.arc(x - 4, y - 35, 6, 0, 2 * Math.PI);
-//        crc2.arc(x + 4, y - 35, 6, 0, 2 * Math.PI);
-//        crc2.arc(x - 5, y - 45, 6, 0, 2 * Math.PI);
-//        crc2.arc(x + 5, y - 45, 6, 0, 2 * Math.PI);
-//        crc2.arc(x + 2, y - 40, 6, 0, 2 * Math.PI);
-//        crc2.arc(x - 4, y - 40, 6, 0, 2 * Math.PI);
-//        crc2.arc(x - 6, y - 40, 6, 0, 2 * Math.PI);
-//        crc2.arc(x + 6, y - 40, 6, 0, 2 * Math.PI);
-//        crc2.arc(x, y - 48, 6, 0, 2 * Math.PI);
-//        crc2.fillStyle = "white";
-//        crc2.fill();
-//
-//
-//
-//
-//    }
-//    //Blume2
-//    function drawBlume2(x: number, y: number): void {
-//        //Stiel
-//        crc2.beginPath();
-//        crc2.fillStyle = "#26a000";
-//        crc2.fillRect(x, y - 30, 3, 60);
-//        crc2.closePath();
-//        crc2.fill();
-//
-//        //Kopf
-//        crc2.beginPath();
-//        crc2.arc(x + 5, y - 33, 6, 0, 2 * Math.PI);
-//        crc2.fillStyle = "#ea8e04";
-//        crc2.closePath();
-//        crc2.fill();
-//        crc2.beginPath();
-//        crc2.arc(x + 5, y - 25, 6, 0, 2 * Math.PI);
-//        crc2.fillStyle = "#ea8e04";
-//        crc2.closePath();
-//        crc2.fill();
-//        crc2.beginPath();
-//        crc2.arc(x + 1, y - 38, 6, 0, 2 * Math.PI);
-//        crc2.fillStyle = "#ea8e04";
-//        crc2.closePath();
-//        crc2.fill();
-//        crc2.beginPath();
-//        crc2.arc(x - 5, y - 33, 6, 0, 2 * Math.PI);
-//        crc2.fillStyle = "#ea8e04";
-//        crc2.closePath();
-//        crc2.fill();
-//        crc2.beginPath();
-//        crc2.arc(x - 5, y - 25, 6, 0, 2 * Math.PI);
-//        crc2.fillStyle = "#ea8e04";
-//        crc2.closePath();
-//        crc2.fill();
-//        crc2.beginPath();
-//        crc2.arc(x + 1, y - 30, 4, 0, 2 * Math.PI);
-//        crc2.fillStyle = "#1e1911";
-//        crc2.closePath();
-//        crc2.fill();
-//
-//
-//    }
 
 }

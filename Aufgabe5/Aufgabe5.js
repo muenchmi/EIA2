@@ -2,6 +2,10 @@ var BLUMEN;
 (function (BLUMEN) {
     window.addEventListener("load", init);
     let crc2;
+    let imgData;
+    let x = [];
+    let y = [];
+    let n = 10;
     function init(_event) {
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
@@ -123,6 +127,44 @@ var BLUMEN;
         crc2.arc(57, 60, 10, 0, 2 * Math.PI);
         crc2.fillStyle = "white";
         crc2.fill();
+        //Bienenstock
+        crc2.beginPath();
+        crc2.arc(480, 290, 10, 0, 2 * Math.PI);
+        crc2.arc(480, 275, 10, 0, 2 * Math.PI);
+        crc2.arc(480, 260, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "#e5c300";
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(520, 290, 10, 0, 2 * Math.PI);
+        crc2.arc(520, 275, 10, 0, 2 * Math.PI);
+        crc2.arc(520, 260, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "#e5c300";
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillRect(480, 300, 40, -50);
+        crc2.fillStyle = "#e5c300";
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(500, 260, 25, 0, 2 * Math.PI);
+        crc2.arc(500, 260, 25, 0, 2 * Math.PI);
+        crc2.arc(500, 260, 25, 0, 2 * Math.PI);
+        crc2.fillStyle = "#e5c300";
+        crc2.closePath();
+        crc2.fill();
+        //EingangBienenstock
+        crc2.beginPath();
+        crc2.fillStyle = "black";
+        crc2.fillRect(495, 272, 10, 10);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(500, 272, 5, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
+        crc2.closePath();
+        crc2.fill();
         //Blume
         function drawBlume(x, y) {
             //Stiel
@@ -204,6 +246,55 @@ var BLUMEN;
                     drawBlume2(x, y);
                     break;
             }
+        }
+        //Bildspeichern
+        imgData = crc2.getImageData(0, 0, 600, 400);
+        //Bienenstartpunkt
+        for (let i = 0; i < n; i++) {
+            x[i] = 500;
+            y[i] = 275;
+        }
+        window.setTimeout(animation, 2);
+        canvas.addEventListener("click", drawnewBiene);
+        function drawnewBiene() {
+            x.push(500);
+            y.push(275);
+        }
+        function animation() {
+            //Bild einsetzen anstelle x=0 y=0
+            crc2.putImageData(imgData, 0, 0);
+            for (let i = 0; i < x.length; i++) {
+                x[i] += Math.random() * 1.5 - 1; //ver�nderung der Flugbahn
+                y[i] += Math.random() * 2 - 0.99;
+                if (x[i] >= 600)
+                    x[i] = 0;
+                if (x[i] < 0)
+                    x[i] = 600;
+                if (y[i] > 400)
+                    y[i] = 0;
+                if (y[i] <= 0)
+                    y[i] = 400;
+                drawBiene(x[i], y[i]);
+            }
+            window.setTimeout(animation, 20); //L�nge
+        }
+        //ICH BIN EINE BIENE
+        function drawBiene(_x, _y) {
+            crc2.beginPath();
+            crc2.arc(_x, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.arc(_x + 1, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "#e5c300";
+            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.arc(_x + 2, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.closePath();
         }
     }
 })(BLUMEN || (BLUMEN = {}));
