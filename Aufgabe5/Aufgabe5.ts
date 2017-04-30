@@ -2,9 +2,10 @@ namespace BLUMEN {
     window.addEventListener("load", init);
     let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
+    let n: number = 10;
     let x: number[] = [];
     let y: number[] = [];
-    let n: number = 10;
+
 
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
@@ -306,6 +307,7 @@ namespace BLUMEN {
             window.setTimeout(animation, 20); //Länge
         }
         //ICH BIN EINE BIENE
+        //Körper
         function drawBiene(_x: number, _y: number): void {
             crc2.beginPath();
             crc2.arc(_x, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
@@ -318,10 +320,20 @@ namespace BLUMEN {
             crc2.fill();
             crc2.closePath();
             crc2.beginPath();
-            crc2.arc(_x + 2, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.arc(_x + 3, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
             crc2.fillStyle = "black";
             crc2.fill();
             crc2.closePath();
+            crc2.beginPath();
+            crc2.moveTo(_x + 3, _y);
+            crc2.lineTo(_x + 7, _y + 1);
+            crc2.lineTo(_x + 3, _y);
+            crc2.closePath();
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.stroke();
+
+
         }
     }
 

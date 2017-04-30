@@ -3,9 +3,9 @@ var BLUMEN;
     window.addEventListener("load", init);
     let crc2;
     let imgData;
+    let n = 10;
     let x = [];
     let y = [];
-    let n = 10;
     function init(_event) {
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
@@ -279,6 +279,7 @@ var BLUMEN;
             window.setTimeout(animation, 20); //L�nge
         }
         //ICH BIN EINE BIENE
+        //K�rper
         function drawBiene(_x, _y) {
             crc2.beginPath();
             crc2.arc(_x, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
@@ -291,10 +292,18 @@ var BLUMEN;
             crc2.fill();
             crc2.closePath();
             crc2.beginPath();
-            crc2.arc(_x + 2, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.arc(_x + 3, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
             crc2.fillStyle = "black";
             crc2.fill();
             crc2.closePath();
+            crc2.beginPath();
+            crc2.moveTo(_x + 3, _y);
+            crc2.lineTo(_x + 7, _y + 1);
+            crc2.lineTo(_x + 3, _y);
+            crc2.closePath();
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.stroke();
         }
     }
 })(BLUMEN || (BLUMEN = {}));
