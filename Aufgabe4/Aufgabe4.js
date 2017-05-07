@@ -1,9 +1,9 @@
 var BLUMEN;
 (function (BLUMEN) {
     window.addEventListener("load", init);
-    let crc2;
+    var crc2;
     function init(_event) {
-        let canvas;
+        var canvas;
         canvas = document.getElementsByTagName("canvas")[0];
         canvas.width = 600;
         canvas.height = 400;
@@ -193,9 +193,9 @@ var BLUMEN;
         }
         //Blumenwiese random
         for (var i = 0; i < 22; i++) {
-            let randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
-            let x = Math.floor((Math.random() * (600 - 200)) + 200);
-            let y = Math.floor((Math.random() * (400 - 350)) + 350);
+            var randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
+            var x = Math.floor((Math.random() * (600 - 200)) + 200);
+            var y = Math.floor((Math.random() * (400 - 350)) + 350);
             switch (randomBlumenWiese) {
                 case 0:
                     drawBlume(x, y);

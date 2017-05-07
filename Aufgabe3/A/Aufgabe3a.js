@@ -1,18 +1,18 @@
 //Hatte hilfe von Janett Stüwe 
 document.addEventListener("DOMContentLoaded", function () {
-    let rice = 1;
-    let zeile = 0;
-    let n = 64;
-    for (let i = 0; i < n; i++) {
-        let element = document.createElement("div");
+    var rice = 1;
+    var zeile = 0;
+    var n = 64;
+    for (var i_1 = 0; i_1 < n; i_1++) {
+        var element = document.createElement("div");
         element.textContent = rice.toString();
         //Umbruch
-        if (i % 8 == 0) {
+        if (i_1 % 8 == 0) {
             zeile = zeile + 1;
         }
         //Schwarzweiß
         if (zeile % 2 == 0) {
-            if (i % 2 != 0) {
+            if (i_1 % 2 != 0) {
                 element.className = "board white";
             }
             else {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         else {
-            if (i % 2 != 0) {
+            if (i_1 % 2 != 0) {
                 element.className = "board black";
             }
             else {
