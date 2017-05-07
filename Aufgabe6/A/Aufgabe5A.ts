@@ -3,9 +3,12 @@ namespace BLUMEN {
     let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
     let n: number = 10;
-    let x: number[] = [];
-    let y: number[] = [];
-
+    interface Bee {
+        x: number;
+        y: number;
+        color: string;
+    }
+    let bees: Bee[] = [];
 
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
@@ -249,8 +252,6 @@ namespace BLUMEN {
             crc2.fillStyle = "#1e1911";
             crc2.closePath();
             crc2.fill();
-
-
         }
 
         //Blumenwiese random
@@ -273,68 +274,70 @@ namespace BLUMEN {
 
         //Bienenstartpunkt
         for (let i: number = 0; i < n; i++) {
-            x[i] = 500;
-            y[i] = 275;
+              let b: Bee = { x: 0, y: 0, color: " " };
+            b.x = 500;
+            b.y = 275;
         }
+         //ICH BIN EINE BIENE
+        //Körper
+        function drawBiene(_b: Bee): void {
+            crc2.beginPath();
+            crc2.arc(_b.x, _b.y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.arc(_b.x + 1, _b.y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "#e5c300";
+            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.arc(_b.x + 3, _b.y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.moveTo(_b.x + 3, _b.y);
+            crc2.lineTo(_b.x + 7, _b.y + 1);
+            crc2.lineTo(_b.x + 3, _b.y);
+            crc2.closePath();
+            crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.stroke();
+}
 
         window.setTimeout(animation, 2);
         canvas.addEventListener("click", drawnewBiene);
 
         function drawnewBiene(): void {
-            x.push(500);
-            y.push(275);
+            bees.push({ x: 500, y: 275, color: "black" });
+
         }
 
         function animation(): void {
             //Bild einsetzen anstelle x=0 y=0
             crc2.putImageData(imgData, 0, 0);
 
-            for (let i: number = 0; i < x.length; i++) {
-                x[i] += Math.random() * 1.5 - 1; //veränderung der Flugbahn
-                y[i] += Math.random() * 2 - 0.99;
+            for (let i: number = 0; i < bees.length; i++) {
+                let b: Bee = bees[i];
+                b.x += Math.random() * 1.5 - 1; //veränderung der Flugbahn
+                b.y += Math.random() * 2 - 0.99;
 
-                if (x[i] >= 600)
-                    x[i] = 0;
-                if (x[i] < 0)
-                    x[i] = 600;
-                if (y[i] > 400)
-                    y[i] = 0;
-                if (y[i] <= 0)
-                    y[i] = 400;
+                if (b.x >= 600)
+                    b.x = 0;
+                if (b.x < 0)
+                    b.x = 600;
+                if (b.y > 400)
+                    b.y = 0;
+                if (b.y <= 0)
+                    b.y = 400;
 
-                drawBiene(x[i], y[i]);
+                drawBiene(b);
             }
             window.setTimeout(animation, 20); //Länge
         }
-        //ICH BIN EINE BIENE
-        //Körper
-        function drawBiene(_x: number, _y: number): void {
-            crc2.beginPath();
-            crc2.arc(_x, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
-            crc2.fillStyle = "black";
-            crc2.fill();
-            crc2.closePath();
-            crc2.beginPath();
-            crc2.arc(_x + 1, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
-            crc2.fillStyle = "#e5c300";
-            crc2.fill();
-            crc2.closePath();
-            crc2.beginPath();
-            crc2.arc(_x + 3, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
-            crc2.fillStyle = "black";
-            crc2.fill();
-            crc2.closePath();
-            crc2.beginPath();
-            crc2.moveTo(_x + 3, _y);
-            crc2.lineTo(_x + 7, _y + 1);
-            crc2.lineTo(_x + 3, _y);
-            crc2.closePath();
-            crc2.fillStyle = "black";
-            crc2.fill();
-            crc2.stroke();
-
-
-        }
+  
+        
     }
 
 }

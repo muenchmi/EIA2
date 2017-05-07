@@ -4,8 +4,7 @@ var BLUMEN;
     var crc2;
     var imgData;
     var n = 10;
-    var x = [];
-    var y = [];
+    var bees = [];
     function init(_event) {
         var canvas;
         canvas = document.getElementsByTagName("canvas")[0];
@@ -236,14 +235,14 @@ var BLUMEN;
         //Blumenwiese random
         for (var i = 0; i < 22; i++) {
             var randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
-            var x_1 = Math.floor((Math.random() * (600 - 200)) + 200);
-            var y_1 = Math.floor((Math.random() * (400 - 350)) + 350);
+            var x = Math.floor((Math.random() * (600 - 200)) + 200);
+            var y = Math.floor((Math.random() * (400 - 350)) + 350);
             switch (randomBlumenWiese) {
                 case 0:
-                    drawBlume(x_1, y_1);
+                    drawBlume(x, y);
                     break;
                 case 1:
-                    drawBlume2(x_1, y_1);
+                    drawBlume2(x, y);
                     break;
             }
         }
@@ -251,59 +250,60 @@ var BLUMEN;
         imgData = crc2.getImageData(0, 0, 600, 400);
         //Bienenstartpunkt
         for (var i_1 = 0; i_1 < n; i_1++) {
-            x[i_1] = 500;
-            y[i_1] = 275;
-        }
-        window.setTimeout(animation, 2);
-        canvas.addEventListener("click", drawnewBiene);
-        function drawnewBiene() {
-            x.push(500);
-            y.push(275);
-        }
-        function animation() {
-            //Bild einsetzen anstelle x=0 y=0
-            crc2.putImageData(imgData, 0, 0);
-            for (var i_2 = 0; i_2 < x.length; i_2++) {
-                x[i_2] += Math.random() * 1.5 - 1; //ver�nderung der Flugbahn
-                y[i_2] += Math.random() * 2 - 0.99;
-                if (x[i_2] >= 600)
-                    x[i_2] = 0;
-                if (x[i_2] < 0)
-                    x[i_2] = 600;
-                if (y[i_2] > 400)
-                    y[i_2] = 0;
-                if (y[i_2] <= 0)
-                    y[i_2] = 400;
-                drawBiene(x[i_2], y[i_2]);
-            }
-            window.setTimeout(animation, 20); //L�nge
+            var b = { x: 0, y: 0, color: " " };
+            b.x = 500;
+            b.y = 275;
         }
         //ICH BIN EINE BIENE
         //K�rper
-        function drawBiene(_x, _y) {
+        function drawBiene(_b) {
             crc2.beginPath();
-            crc2.arc(_x, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.arc(_b.x, _b.y, 2.25, 0 * Math.PI, 2 * Math.PI);
             crc2.fillStyle = "black";
             crc2.fill();
             crc2.closePath();
             crc2.beginPath();
-            crc2.arc(_x + 1, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.arc(_b.x + 1, _b.y, 2.25, 0 * Math.PI, 2 * Math.PI);
             crc2.fillStyle = "#e5c300";
             crc2.fill();
             crc2.closePath();
             crc2.beginPath();
-            crc2.arc(_x + 3, _y, 2.25, 0 * Math.PI, 2 * Math.PI);
+            crc2.arc(_b.x + 3, _b.y, 2.25, 0 * Math.PI, 2 * Math.PI);
             crc2.fillStyle = "black";
             crc2.fill();
             crc2.closePath();
             crc2.beginPath();
-            crc2.moveTo(_x + 3, _y);
-            crc2.lineTo(_x + 7, _y + 1);
-            crc2.lineTo(_x + 3, _y);
+            crc2.moveTo(_b.x + 3, _b.y);
+            crc2.lineTo(_b.x + 7, _b.y + 1);
+            crc2.lineTo(_b.x + 3, _b.y);
             crc2.closePath();
             crc2.fillStyle = "black";
             crc2.fill();
             crc2.stroke();
+        }
+        window.setTimeout(animation, 2);
+        canvas.addEventListener("click", drawnewBiene);
+        function drawnewBiene() {
+            bees.push({ x: 500, y: 275, color: "black" });
+        }
+        function animation() {
+            //Bild einsetzen anstelle x=0 y=0
+            crc2.putImageData(imgData, 0, 0);
+            for (var i_2 = 0; i_2 < bees.length; i_2++) {
+                var b = bees[i_2];
+                b.x += Math.random() * 1.5 - 1; //ver�nderung der Flugbahn
+                b.y += Math.random() * 2 - 0.99;
+                if (b.x >= 600)
+                    b.x = 0;
+                if (b.x < 0)
+                    b.x = 600;
+                if (b.y > 400)
+                    b.y = 0;
+                if (b.y <= 0)
+                    b.y = 400;
+                drawBiene(b);
+            }
+            window.setTimeout(animation, 20); //L�nge
         }
     }
 })(BLUMEN || (BLUMEN = {}));
