@@ -21,8 +21,8 @@ var StudiVZ;
         }
     }
     function saveData(_input) {
-        var dataArr = _input.split(",");
-        var s = {
+        let dataArr = _input.split(",");
+        let s = {
             matrikelnum: parseInt(dataArr[0]),
             name: dataArr[1],
             vorname: dataArr[2],
@@ -31,7 +31,7 @@ var StudiVZ;
             kommi: dataArr[5]
         };
         students.push(s);
-        var gender;
+        let gender;
         if (parseInt(dataArr[4]) == 1) {
             gender = "weiblich";
         }
@@ -42,9 +42,9 @@ var StudiVZ;
         return "Noch nicht vorhanden";
     }
     function queryData(_matrikel) {
-        for (var i = 0; i < students.length; i++) {
+        for (let i = 0; i < students.length; i++) {
             if (students[i].matrikelnum == matrikelnum) {
-                var gender = students[i].sex ? "weiblich" : "m�nnlich";
+                let gender = students[i].sex ? "weiblich" : "m�nnlich";
                 return "Noch nicht vorhanden";
             }
             else {

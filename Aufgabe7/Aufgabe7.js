@@ -1,12 +1,12 @@
 var BLUMEN;
 (function (BLUMEN) {
     window.addEventListener("load", init);
-    var crc2;
-    var imgData;
-    var n = 10;
-    var bees = [];
+    let crc2;
+    let imgData;
+    let n = 10;
+    let bees = [];
     function init(_event) {
-        var canvas;
+        let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
         canvas.width = 600;
         canvas.height = 400;
@@ -234,9 +234,9 @@ var BLUMEN;
         }
         //Blumenwiese random
         for (var i = 0; i < 22; i++) {
-            var randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
-            var x = Math.floor((Math.random() * (600 - 200)) + 200);
-            var y = Math.floor((Math.random() * (400 - 350)) + 350);
+            let randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
+            let x = Math.floor((Math.random() * (600 - 200)) + 200);
+            let y = Math.floor((Math.random() * (400 - 350)) + 350);
             switch (randomBlumenWiese) {
                 case 0:
                     drawBlume(x, y);
@@ -249,8 +249,8 @@ var BLUMEN;
         //Bildspeichern
         imgData = crc2.getImageData(0, 0, 600, 400);
         //Bienenstartpunkt
-        for (var i_1 = 0; i_1 < n; i_1++) {
-            var b = { x: 0, y: 0, color: " " };
+        for (let i = 0; i < n; i++) {
+            let b = { x: 0, y: 0, color: " " };
             b.x = 500;
             b.y = 275;
         }
@@ -289,8 +289,8 @@ var BLUMEN;
         function animation() {
             //Bild einsetzen anstelle x=0 y=0
             crc2.putImageData(imgData, 0, 0);
-            for (var i_2 = 0; i_2 < bees.length; i_2++) {
-                var b = bees[i_2];
+            for (let i = 0; i < bees.length; i++) {
+                let b = bees[i];
                 b.x += Math.random() * 1.5 - 1; //ver�nderung der Flugbahn
                 b.y += Math.random() * 2 - 0.99;
                 if (b.x >= 600)

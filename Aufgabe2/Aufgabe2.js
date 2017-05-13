@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var rice = 1;
-    var zeile = 0;
-    var n = 64;
-    for (var i = 0; i < n; i++) {
-        var element = document.createElement("div");
+    let rice = 1;
+    let zeile = 0;
+    let n = 64;
+    for (let i = 0; i < n; i++) {
+        let element = document.createElement("div");
         element.textContent = rice.toString();
         //Umbruch
         if (i % 8 == 0) {

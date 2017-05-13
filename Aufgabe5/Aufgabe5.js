@@ -1,13 +1,13 @@
 var BLUMEN;
 (function (BLUMEN) {
     window.addEventListener("load", init);
-    var crc2;
-    var imgData;
-    var n = 10;
-    var x = [];
-    var y = [];
+    let crc2;
+    let imgData;
+    let n = 10;
+    let x = [];
+    let y = [];
     function init(_event) {
-        var canvas;
+        let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
         canvas.width = 600;
         canvas.height = 400;
@@ -235,24 +235,24 @@ var BLUMEN;
         }
         //Blumenwiese random
         for (var i = 0; i < 22; i++) {
-            var randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
-            var x_1 = Math.floor((Math.random() * (600 - 200)) + 200);
-            var y_1 = Math.floor((Math.random() * (400 - 350)) + 350);
+            let randomBlumenWiese = Math.floor((Math.random() * 2) + 0);
+            let x = Math.floor((Math.random() * (600 - 200)) + 200);
+            let y = Math.floor((Math.random() * (400 - 350)) + 350);
             switch (randomBlumenWiese) {
                 case 0:
-                    drawBlume(x_1, y_1);
+                    drawBlume(x, y);
                     break;
                 case 1:
-                    drawBlume2(x_1, y_1);
+                    drawBlume2(x, y);
                     break;
             }
         }
         //Bildspeichern
         imgData = crc2.getImageData(0, 0, 600, 400);
         //Bienenstartpunkt
-        for (var i_1 = 0; i_1 < n; i_1++) {
-            x[i_1] = 500;
-            y[i_1] = 275;
+        for (let i = 0; i < n; i++) {
+            x[i] = 500;
+            y[i] = 275;
         }
         window.setTimeout(animation, 2);
         canvas.addEventListener("click", drawnewBiene);
@@ -263,18 +263,18 @@ var BLUMEN;
         function animation() {
             //Bild einsetzen anstelle x=0 y=0
             crc2.putImageData(imgData, 0, 0);
-            for (var i_2 = 0; i_2 < x.length; i_2++) {
-                x[i_2] += Math.random() * 1.5 - 1; //ver�nderung der Flugbahn
-                y[i_2] += Math.random() * 2 - 0.99;
-                if (x[i_2] >= 600)
-                    x[i_2] = 0;
-                if (x[i_2] < 0)
-                    x[i_2] = 600;
-                if (y[i_2] > 400)
-                    y[i_2] = 0;
-                if (y[i_2] <= 0)
-                    y[i_2] = 400;
-                drawBiene(x[i_2], y[i_2]);
+            for (let i = 0; i < x.length; i++) {
+                x[i] += Math.random() * 1.5 - 1; //ver�nderung der Flugbahn
+                y[i] += Math.random() * 2 - 0.99;
+                if (x[i] >= 600)
+                    x[i] = 0;
+                if (x[i] < 0)
+                    x[i] = 600;
+                if (y[i] > 400)
+                    y[i] = 0;
+                if (y[i] <= 0)
+                    y[i] = 400;
+                drawBiene(x[i], y[i]);
             }
             window.setTimeout(animation, 20); //L�nge
         }

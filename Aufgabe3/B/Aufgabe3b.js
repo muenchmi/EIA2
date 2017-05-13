@@ -7,14 +7,14 @@
 //Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert
 //hatte hilfe von Janett St�we.
 //-->
-var deck;
-var cards;
-var hkarten;
-var ablage;
+let deck;
+let cards;
+let hkarten;
+let ablage;
 document.addEventListener("DOMContentLoaded", function () {
     deck = document.getElementById("deck");
     deck.addEventListener("click", addhkarten);
-    var cards = ["Herz As",
+    let cards = ["Herz As",
         "Herz K�nig",
         "Herz Dame",
         "Herz Bube",
@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "Kreuz 7"
     ];
     hkarten = document.getElementsByClassName("hkarten");
-    for (var x = 0; x < hkarten.length; x++) {
+    for (let x = 0; x < hkarten.length; x++) {
         hkarten[x].addEventListener("click", addablage);
     }
     ablage = document.getElementById("ablage");
 });
 function addhkarten() {
-    var randomCard = cards.splice(Math.round(Math.random() * (cards.length - 1)), 1)[0]; //auf eine Karte zugreifen diese nehmen und genau diese aus dem Stapel/ Array l�schen
-    var freeHand = findEmpty();
+    let randomCard = cards.splice(Math.round(Math.random() * (cards.length - 1)), 1)[0]; //auf eine Karte zugreifen diese nehmen und genau diese aus dem Stapel/ Array l�schen
+    let freeHand = findEmpty();
     if (freeHand != null) {
         freeHand.innerText = randomCard;
     }
@@ -64,7 +64,7 @@ function addhkarten() {
     }
 }
 function findEmpty() {
-    for (var i = 0; i < hkarten.length; i++) {
+    for (let i = 0; i < hkarten.length; i++) {
         if (hkarten[i].textContent === "") {
             return hkarten[i];
         }
@@ -72,7 +72,7 @@ function findEmpty() {
     return null;
 }
 function addablage(_event) {
-    var element = _event.target;
+    let element = _event.target;
     ablage.textContent = element.textContent;
     element.textContent = "";
 }
