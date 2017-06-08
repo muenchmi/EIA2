@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+body {
+	font-family: 'Lobster'; 
+
+}
+
+h2 {
+	font-style: bold;
+	text-align: center;
+}
+
+fieldset legend {
+	font-style: bold;
+	font-size: 24px;
+	text-align: center;
+}
+
+input[type="radio"] {
+	display: inline;
+}
+
+#Button {
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	border: 1px;
+	font-weight: bold;
+}
+
+p {
+	text-align: center;
+	margin: 10px;
+	display: block;
+}
+
+.textfelder {
+	width: 100%;
+	margin-bottom: 1em;
+	background-color: white;
+	
+}
+
+label::after {
+	content: "";
+	display: block;
+}
