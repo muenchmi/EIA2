@@ -27,7 +27,7 @@ namespace Aufgabe9Eis {
         Eissorten.addEventListener("change", change);
         Toppings.addEventListener("change", change);
         Darreichungsform.addEventListener("change", change);
-        Button.addEventListener("click", DatenPruefen);
+        Button.addEventListener("click", Daten);
     }
 
     function createInputs(): void {
@@ -42,14 +42,14 @@ namespace Aufgabe9Eis {
             createRadio(darreichungsform[i]);
         }
     }
-   
-    function createCounter(_eis: string): void {
+
+    function createCounter(_eissorten: string): void {
 
         let input: HTMLInputElement = document.createElement("input");
         let label: HTMLLabelElement = document.createElement("label");
 
 
-        label.innerText = _eis;
+        label.innerText = _eissorten;
         label.appendChild(input);
         input.type = "number";
         input.min = "0";
@@ -60,13 +60,13 @@ namespace Aufgabe9Eis {
         eissortenInput.push(input);
     }
 
-    function createCheckbox(_topping: string): void {
+    function createCheckbox(_toppings: string): void {
 
         let input: HTMLInputElement = document.createElement("input");
         let label: HTMLLabelElement = document.createElement("label");
 
 
-        label.innerText = _topping;
+        label.innerText = _toppings;
         label.appendChild(input);
         input.type = "checkbox";
 
@@ -75,13 +75,13 @@ namespace Aufgabe9Eis {
         toppingsInput.push(input);
     }
 
-    function createRadio(_behaelter: string): void {
+    function createRadio(_darreichungsform: string): void {
 
         let input: HTMLInputElement = document.createElement("input");
         let label: HTMLLabelElement = document.createElement("label");
 
 
-        label.innerText = _behaelter;
+        label.innerText = _darreichungsform;
         label.appendChild(input);
         input.type = "radio";
         input.required = true;
@@ -118,7 +118,7 @@ namespace Aufgabe9Eis {
 
 
 
-    function DatenPruefen(): void {
+    function Daten(): void {
 
         let name: HTMLInputElement = <HTMLInputElement>document.getElementById("Name");
         let vorname: HTMLInputElement = <HTMLInputElement>document.getElementById("Vorname");
@@ -142,7 +142,7 @@ namespace Aufgabe9Eis {
         }
 
     }
-    
+
     function change(): void {
         let summe: number = 0;
         for (let i: number = 0; i < eissortenInput.length; i++) {
@@ -150,7 +150,7 @@ namespace Aufgabe9Eis {
         }
         for (let i: number = 0; i < toppingsInput.length; i++) {
             if (toppingsInput[i].checked)
-            summe += 0.5;
+                summe += 0.5;
         }
 
 

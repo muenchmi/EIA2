@@ -8,91 +8,100 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 -->
 <!DOCTYPE html>
 <html>
-<head>  
-		<meta charset="UTF-8"> 	
-		<title>Aufgabe9 </title>
-	    <meta name="viewport" content="width=device-width; initial-scale=1.0">
-        <script type="text/javascript" src="Aufgabe9.js"></script>
-        <link rel="stylesheet" type="text/css" href="Aufgabe9.css">
+<head>
+<meta charset="UTF-8">
+<title>Aufgabe9</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<script type="text/javascript" src="Aufgabe9.js"></script>
+<link rel="stylesheet" type="text/css" href="Aufgabe9.css">
 
 </head>
 <body>
 	<header>
 		<div>
-			<h2>Eisdeale </h2>
+			<h2>Eisdeale</h2>
 		</div>
 	</header>
 
 	<main>
-    
-    <fieldset id="Bestellung">
-			<legend> Bestelle: </legend>
-			<p class= "text">Eissorten:</p>
-			<p id="Eissorten"></p>
-			<p class="text">Extras:</p>
-			<p id="Extra"></p>
-			<p class="text">Gewählte Behälter:</p>
-			<p id=" Darreichungsform"></p>
-			<h2>Endosten:</h2>
-			<p id="summe"></p>
-			<button name="button" type="button" id="Button">Bestellung abschicken</button>
-		</fieldset>
-	
-	
-	
-	
+
+	<fieldset id="Bestellung">
+		<legend> Bestelle: </legend>
+		<p class="text">Eissorten:</p>
+		<p id="Eissorten"></p>
+		<p class="text">Extras:</p>
+		<p id="Extra"></p>
+		<p class="text">Gewählte Behälter:</p>
+		<p id="Darreichungsform"></p>
+		<h4>Endkosten:</h4>
+		<p id="summe"></p>
+		<button name="button" type="button" id="Button">Bestellung
+			abschicken</button>
+	</fieldset>
+
+
+
+
 	<p class="titel">Wähle Eissorte:</p>
-		<fieldset id="Eissorten">   
-			<legend class="titelkasten"> Eissorte (1 €) </legend>
-		</fieldset>
-		
-	<p class="titel">Wähle Extras: </p>
-	    <fieldset id="Toppings">  
-			<legend class="titelkasten"> Extras (0.50 €) </legend>
-		</fieldset>	
-		
-	<p class="titel"> Darreichungsform </p>	
-		<fieldset id="Darreichungsform>  
-			<legend class="titelkasten"> Waffel oder Becher? </legend>
-		</fieldset>
-		
-		
-	<p class="titel"> Lieferart </p>	
-		<select name="Bestellung" id="Bestellung">
-			<option value="option1" selected>Standardversand</option>
-			<option value="option2">Express Lieferung</option>
-		</select>
-			
-		
-    <p class="titel">Versandt:</p>
+	<fieldset id="Eissorten">
+		<legend class="titelkasten"> Eissorte (1 €) </legend>
+	</fieldset>
+
+	<p class="titel">Wähle Extras:</p>
+	<fieldset id="Toppings">
+		<legend class="titelkasten"> Extras (0.50 €) </legend>
+	</fieldset>
+
+	<p class="titel">Darreichungsform</p>
+	<fieldset id="Darreichungsform">
+		<legend class="titelkasten"> Waffel oder Becher? </legend>
+	</fieldset>
+
+
+	<p class="titel">Lieferart</p>
+	<select name="Bestellung" id="Bestellung">
+		<option value="option1" selected>Standardversand</option>
+		<option value="option2">Express Lieferung</option>
+	</select>
+
+
+	<p class="titel">Versandt:</p>
 	<fieldset id="Kundendaten">
-	
+
 		<legend class="titelkasten">Ihre Daten</legend>
-		
-		<p>Name	</p>		
-		<input required id="Name" class="textfelder" type="text" name="name" placeholder="Name"/>
-		
-		<p>Vorname	</p>
-		<input  required id="Vorname" class="textfelder" type="text" name="vorname" placeholder="Vorname"/>
-	
-		<p>Mail	</p>
-		<input  required id="E-Mail" class="textfelder" type="email" name="Mail" placeholder="maxmusterman@randomemail.com"/>
-	
-		<p>Straße	</p>
-		<input  required id="Straße" class="textfelder" type="text" name="Straße" placeholder="Straße "/>
-		
-		<p>Hausnummer	</p>
-		<input  required id="Hausnummer" class="textfelder" type="text" name="Hausnummer" placeholder="Hausnummer"/>
-	
-		<p>Posteitzahl	</p>
-		<input  required id="Postleitzahl" class="textfelder" type="text" name="Postleitzahl" placeholder="Postleitzahl"/>
-		
-	    <p>Ort	</p>
-		<input  required id="Ort" class="textfelder" type="text" name="Ort" placeholder="Ort"/>
-		
-		<p>Telefonnummer	</p>
-		<input  required id="Telefonnummer" class="textfelder" type="text" name="Telefon" placeholder="Telefonnummer"/>
-	
+
+		<p>Name</p>
+		<input required id="Name" class="textfelder" type="text" name="name"
+			placeholder="Name" />
+
+		<p>Vorname</p>
+		<input required id="Vorname" class="textfelder" type="text"
+			name="vorname" placeholder="Vorname" />
+
+		<p>Mail</p>
+		<input required id="E-Mail" class="textfelder" type="email"
+			name="Mail" placeholder="maxmusterman@randomemail.com" />
+
+		<p>Straße</p>
+		<input required id="Straße" class="textfelder" type="text"
+			name="Straße" placeholder="Straße " />
+
+		<p>Hausnummer</p>
+		<input required id="Hausnummer" class="textfelder" type="text"
+			name="Hausnummer" placeholder="Hausnummer" />
+
+		<p>Posteitzahl</p>
+		<input required id="Postleitzahl" class="textfelder" type="text"
+			name="Postleitzahl" placeholder="Postleitzahl" />
+
+		<p>Ort</p>
+		<input required id="Ort" class="textfelder" type="text" name="Ort"
+			placeholder="Ort" />
+
+		<p>Telefonnummer</p>
+		<input required id="Telefonnummer" class="textfelder" type="text"
+			name="Telefon" placeholder="Telefonnummer" />
+
 	</fieldset>
 
 	</main>

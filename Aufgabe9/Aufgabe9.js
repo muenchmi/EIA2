@@ -23,7 +23,7 @@ var Aufgabe9Eis;
         Eissorten.addEventListener("change", change);
         Toppings.addEventListener("change", change);
         Darreichungsform.addEventListener("change", change);
-        Button.addEventListener("click", DatenPruefen);
+        Button.addEventListener("click", Daten);
     }
     function createInputs() {
         for (let i = 0; i < eissorten.length; i++) {
@@ -36,10 +36,10 @@ var Aufgabe9Eis;
             createRadio(darreichungsform[i]);
         }
     }
-    function createCounter(_eis) {
+    function createCounter(_eissorten) {
         let input = document.createElement("input");
         let label = document.createElement("label");
-        label.innerText = _eis;
+        label.innerText = _eissorten;
         label.appendChild(input);
         input.type = "number";
         input.min = "0";
@@ -47,19 +47,19 @@ var Aufgabe9Eis;
         Eissorten.appendChild(label);
         eissortenInput.push(input);
     }
-    function createCheckbox(_topping) {
+    function createCheckbox(_toppings) {
         let input = document.createElement("input");
         let label = document.createElement("label");
-        label.innerText = _topping;
+        label.innerText = _toppings;
         label.appendChild(input);
         input.type = "checkbox";
         Toppings.appendChild(label);
         toppingsInput.push(input);
     }
-    function createRadio(_behaelter) {
+    function createRadio(_darreichungsform) {
         let input = document.createElement("input");
         let label = document.createElement("label");
-        label.innerText = _behaelter;
+        label.innerText = _darreichungsform;
         label.appendChild(input);
         input.type = "radio";
         input.required = true;
@@ -87,7 +87,7 @@ var Aufgabe9Eis;
         }
         document.getElementById("Summe").innerText = _summe.toString() + " Euro";
     }
-    function DatenPruefen() {
+    function Daten() {
         let name = document.getElementById("Name");
         let vorname = document.getElementById("Vorname");
         let mail = document.getElementById("E-Mail");
